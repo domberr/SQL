@@ -1,0 +1,15 @@
+CREATE TABLE store 
+(id integer primary key, name text, color text, price integer, quantity integer);
+
+INSERT INTO store VALUES
+(1, "jeans", "blue", 9, 20),
+(2, "flannels", "black", 5, 15),
+(3, "skirts", "white", 10, 5),
+(4, "sweatshirt", "red", 15, 30),
+(5, "tshirt", "green", 9, 15);
+
+SELECT * FROM store
+ORDER BY price;
+
+SELECT * FROM store
+WHERE price >=10
