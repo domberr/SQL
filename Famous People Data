@@ -1,0 +1,34 @@
+CREATE TABLE famous_people(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    occupation TEXT);
+
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('Ella Mai', 28, 'singer');
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('Chris Brown', 33, 'singer');
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('Muni Long', 34, 'singer');
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('Will Smith', 54, 'actor');
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('Regina Hall', 52, 'actor');
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('Idris Elba', 50, 'actor');
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('JK Rowling', 57, 'author');
+INSERT INTO famous_people (fullname, age, occupation) VALUES ('James Patterson', 75, 'author');
+
+CREATE TABLE relationship (
+    id integer PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    status TEXT);
+INSERT INTO relationship (person_id, status) VALUES (
+1, 'single');
+INSERT INTO relationship (person_id, status) VALUES ( 2, 'single');
+INSERT INTO relationship (person_id, status) VALUES ( 3, 'singe');
+INSERT INTO relationship (person_id, status) VALUES ( 4, 'married');
+INSERT INTO relationship (person_id, status) VALUES ( 5, 'single');
+INSERT INTO relationship (person_id, status) VALUES ( 6, 'married');
+INSERT INTO relationship (person_id, status) VALUES ( 7, 'married');
+INSERT INTO relationship (person_id, status) VALUES ( 8, 'single');
+
+SELECT fullname FROM famous_people WHERE age>50;
+SELECT famous_people.fullname, relationship.status
+FROM famous_people
+JOIN relationship
+ON famous_people.id=relationship.person_id;
